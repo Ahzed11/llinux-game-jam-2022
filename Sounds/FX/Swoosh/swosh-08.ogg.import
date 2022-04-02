@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swosh-08.ogg-346808a97497658afd26016de9e7a899.oggstr"
+
+[deps]
+
+source_file="res://Sounds/FX/Swoosh/swosh-08.ogg"
+dest_files=[ "res://.import/swosh-08.ogg-346808a97497658afd26016de9e7a899.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

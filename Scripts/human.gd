@@ -7,6 +7,9 @@ signal is_dead
 
 var health := 100
 
+func set_health(health: int) -> void:
+	self.health = health
+
 func get_health() -> int:
 	return health
 	

@@ -1,7 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Sprites/baseball.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/RoomPlayer/RoomPlayerWeapon.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/FX/Punch/hit37.mp3.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/FX/Punch/hit33.mp3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/FX/Punch/hit36.mp3.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/FX/Punch/hit32.mp3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/FX/Punch/hit35.mp3.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/FX/Punch/hit31.mp3.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/FX/Punch/hit34.mp3.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/FX/Punch/hit30.mp3.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-02.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-01.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-04.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-06.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-07.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-08.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/FX/Swoosh/swosh-03.ogg" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.5, 5 )
@@ -38,3 +53,55 @@ texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Swing = SubResource( 3 )
+
+[node name="HitPlayers" type="Node2D" parent="."]
+
+[node name="HitPlayer" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 10 )
+
+[node name="HitPlayer2" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 8 )
+
+[node name="HitPlayer3" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 6 )
+
+[node name="HitPlayer4" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 4 )
+
+[node name="HitPlayer5" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 9 )
+
+[node name="HitPlayer6" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 7 )
+
+[node name="HitPlayer7" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 5 )
+
+[node name="HitPlayer8" type="AudioStreamPlayer2D" parent="HitPlayers"]
+stream = ExtResource( 3 )
+
+[node name="SwooshPlayers" type="Node2D" parent="."]
+
+[node name="SwooshPlayer" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 12 )
+
+[node name="SwooshPlayer2" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 11 )
+
+[node name="SwooshPlayer3" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 17 )
+
+[node name="SwooshPlayer4" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 13 )
+
+[node name="SwooshPlayer5" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 13 )
+
+[node name="SwooshPlayer6" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 14 )
+
+[node name="SwooshPlayer7" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 15 )
+
+[node name="SwooshPlayer8" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
+stream = ExtResource( 16 )

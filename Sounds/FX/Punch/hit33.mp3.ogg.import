@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit33.mp3.ogg-dea83430eac795d6b6352b6625c3407f.oggstr"
+
+[deps]
+
+source_file="res://Sounds/FX/Punch/hit33.mp3.ogg"
+dest_files=[ "res://.import/hit33.mp3.ogg-dea83430eac795d6b6352b6625c3407f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
