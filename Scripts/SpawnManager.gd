@@ -1,6 +1,6 @@
 extends Node2D
 
-var children:Array = self.get_children()
+var children:Array
 
 func spawn_door(var rng):
 	var pose_number:int
@@ -13,6 +13,7 @@ func spawn_door(var rng):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	children = [$P2D1,$P2D2,$P2D3,$P2D4,$P2D5]
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	spawn_door(rng)
