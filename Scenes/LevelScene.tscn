@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Prefabs/LevelPlayer.tscn" type="PackedScene" id=1]
+
+[node name="LevelScene" type="Node2D"]
+
+[node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
