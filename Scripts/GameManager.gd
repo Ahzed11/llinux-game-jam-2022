@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name GameManager
+
 var building_scene = preload("res://Scenes/LevelScene.tscn")
 var room_scene = preload("res://Scenes/Prefabs/BaseRoom.tscn")
 
@@ -9,11 +11,14 @@ var wood_items_count := 0
 var food_items_count := 0
 var water_items_count := 0
 
+enum CHOICES {DOOR, STAIRS}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var instance = building_scene.instance()
 	add_child(instance)
+	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
