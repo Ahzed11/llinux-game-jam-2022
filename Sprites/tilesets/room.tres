@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=41 format=2]
+[gd_resource type="TileSet" load_steps=38 format=2]
 
 [ext_resource path="res://Sprites/tiles/room/sofa.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/tiles/room/floor.png" type="Texture" id=2]
@@ -40,8 +40,8 @@ polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=33]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
-[sub_resource type="NavigationPolygon" id=17]
-vertices = PoolVector2Array( 23.1559, 32, 2.927, 32, 2.927, 0.0603428, 23.1559, 0.0603428 )
+[sub_resource type="NavigationPolygon" id=23]
+vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=24]
@@ -81,16 +81,6 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="NavigationPolygon" id=23]
-vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=24]
-polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=25]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="NavigationPolygon" id=26]
