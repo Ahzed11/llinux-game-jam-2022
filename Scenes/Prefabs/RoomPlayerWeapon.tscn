@@ -1,19 +1,18 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/icon.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/baseball.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.0723, 32.3441 )
+extents = Vector2( 16.5, 5 )
 
 [node name="Hitbox" type="Area2D"]
-scale = Vector2( 2.12021, 0.154588 )
 collision_layer = 2
 collision_mask = 8
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 32.0723, -6.46883 )
+position = Vector2( 16.5, 0 )
 shape = SubResource( 2 )
 
 [node name="Weapon" type="Sprite" parent="."]
+position = Vector2( 15, 2 )
 texture = ExtResource( 1 )
-offset = Vector2( 32.0723, -6.46883 )

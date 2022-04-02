@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baseball.png-954be88df38d7a7091efd25a9e6a4177.stex"
+path="res://.import/baseball.png-d6db067f300c87befd6e90e6e206f632.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tiles/baseball.png"
-dest_files=[ "res://.import/baseball.png-954be88df38d7a7091efd25a9e6a4177.stex" ]
+source_file="res://Sprites/baseball.png"
+dest_files=[ "res://.import/baseball.png-d6db067f300c87befd6e90e6e206f632.stex" ]
 
 [params]
 

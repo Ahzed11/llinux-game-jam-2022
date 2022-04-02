@@ -4,8 +4,8 @@
 [ext_resource path="res://Scripts/RoomEnnemy/RoomEnnemy.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/HPLabel.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 31.5753
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
 
 [node name="Ennemy" type="KinematicBody2D"]
 position = Vector2( 0, 103 )
@@ -22,6 +22,7 @@ position = Vector2( 0, -1 )
 texture = ExtResource( 1 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="HPLabel" type="Label" parent="."]
@@ -38,3 +39,4 @@ text = "Tarte"
 script = ExtResource( 3 )
 
 [connection signal="health_changed" from="." to="HPLabel" method="_on_Ennemy_health_changed"]
+[connection signal="is_dead" from="." to="." method="_on_Ennemy_is_dead"]
