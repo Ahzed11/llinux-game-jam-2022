@@ -34,6 +34,26 @@ func spawn_windows(var rng):
 			pose_number = rng.randi_range(0,6)
 		wall[pose_number].add_child(node)
 
+func spawn_food_and_water(var rng):
+	var pose_number:int
+	var table_food := preload("res://Scenes/objet/empty_table.tscn").instance()
+	var table_water := preload("res://Scenes/objet/empty_table.tscn").instance()
+	
+	pose_number = rng.randi_range(0,7)
+	while sol[pose_number].get_child_count() != 0 :
+		pose_number = rng.randi_range(0,7)
+	sol[pose_number].add_child(table_food)
+	
+	pose_number = rng.randi_range(0,7)
+	while sol[pose_number].get_child_count() != 0 :
+		pose_number = rng.randi_range(0,7)
+	sol[pose_number].add_child(table_water)
+	
+	if get_parent().get_parent().water_items_count > 0 :
+		table_water.add_child(preload("res://Scenes/objet/water.tscn").instance())
+
+	if get_parent().get_parent().food_items_count > 0 :
+		table_food.add_child(preload("res://Scenes/objet/food.tscn").instance())
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,3 +64,4 @@ func _ready():
 	spawn_door(rng)
 	spawn_stair(rng)
 	spawn_windows(rng)
+	spawn_food_and_water(rng)
