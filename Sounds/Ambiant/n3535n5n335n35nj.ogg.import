@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/n3535n5n335n35nj.ogg-4284721fc512c4eb18fc40fe76288031.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Ambiant/n3535n5n335n35nj.ogg"
+dest_files=[ "res://.import/n3535n5n335n35nj.ogg-4284721fc512c4eb18fc40fe76288031.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
