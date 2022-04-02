@@ -6,16 +6,25 @@
 script = ExtResource( 1 )
 
 [node name="P2D1" type="Position2D" parent="."]
-position = Vector2( 90, 127 )
+position = Vector2( 70, 127 )
 
 [node name="P2D2" type="Position2D" parent="."]
-position = Vector2( 210, 127 )
+position = Vector2( 118, 127 )
 
 [node name="P2D3" type="Position2D" parent="."]
-position = Vector2( 342, 127 )
+position = Vector2( 166, 127 )
 
 [node name="P2D4" type="Position2D" parent="."]
-position = Vector2( 283, 127 )
+position = Vector2( 214, 127 )
 
 [node name="P2D5" type="Position2D" parent="."]
-position = Vector2( 148, 127 )
+position = Vector2( 262, 127 )
+
+[node name="P2D6" type="Position2D" parent="."]
+position = Vector2( 310, 127 )
+
+[node name="P2D7" type="Position2D" parent="."]
+position = Vector2( 358, 127 )
+
+[node name="P2D8" type="Position2D" parent="."]
+position = Vector2( 406, 127 )
