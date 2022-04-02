@@ -7,9 +7,9 @@ var room_scene = preload("res://Scenes/Prefabs/BaseRoom.tscn")
 
 var thirst := 100
 var hungriness := 100
-var wood_items_count := 0
-var food_items_count := 0
-var water_items_count := 0
+var wood_items_count := 1
+var food_items_count := 1
+var water_items_count := 1
 
 var level
 var room
