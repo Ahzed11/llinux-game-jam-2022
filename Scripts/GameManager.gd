@@ -11,8 +11,6 @@ var wood_items_count := 0
 var food_items_count := 0
 var water_items_count := 0
 
-enum CHOICES {DOOR, STAIRS}
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var instance = building_scene.instance()

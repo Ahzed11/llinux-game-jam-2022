@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 		body_on = $Area2D.get_overlapping_areas()
 		if len(body_on) > 0 :
 			if body_on[0].name == "stairs":
-				emit_signal("chose", GameManager.CHOICES.STAIRS)
+				emit_signal("chose", "stairs")
 			if body_on[0].name == "door":
-				emit_signal("chose", GameManager.CHOICES.DOOR)
+				emit_signal("chose", "door")
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(player_input.normalized() * move_speed)
