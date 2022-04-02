@@ -1,4 +1,6 @@
-extends KinematicBody2D
+extends Human
+
+class_name Player
 
 export var move_speed := 400
 var player_input: Vector2

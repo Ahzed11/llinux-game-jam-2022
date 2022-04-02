@@ -8,6 +8,7 @@ extents = Vector2( 32.0723, 32.3441 )
 [node name="Hitbox" type="Area2D"]
 scale = Vector2( 2.12021, 0.154588 )
 collision_layer = 2
+collision_mask = 8
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 32.0723, -6.46883 )

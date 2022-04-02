@@ -10,6 +10,7 @@
 radius = 32.1403
 
 [node name="RoomPlayer" type="KinematicBody2D"]
+collision_mask = 29
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Human",
+"class": "Ennemy",
+"language": "GDScript",
+"path": "res://Scripts/RoomEnnemy/RoomEnnemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Human",
+"language": "GDScript",
+"path": "res://Scripts/human.gd"
+}, {
+"base": "Human",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/RoomPlayer/RoomPlayer.gd"
+} ]
+_global_script_class_icons={
+"Ennemy": "",
+"Human": "",
+"Player": ""
+}
+
 [application]
 
 config/name="Llinux-game-jam- 2022"

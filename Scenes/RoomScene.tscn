@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/RoomPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Prefabs/RoomEnnemy.tscn" type="PackedScene" id=2]
 
 [node name="RoomScene" type="Node2D"]
 
 [node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 140, 44 )
+
+[node name="Ennemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 153 )
+scale = Vector2( 0.851915, 0.905733 )
