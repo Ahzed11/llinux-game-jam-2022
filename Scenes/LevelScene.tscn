@@ -46,13 +46,13 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0 )
 
-[node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 44, 116 )
-scale = Vector2( 0.4, 0.4 )
-
 [node name="SpawnManager" parent="." instance=ExtResource( 3 )]
 
 [node name="testmap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
+
+[node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 45, 115 )
+scale = Vector2( 0.4, 0.4 )

@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/RoomPlayer/RoomPlayer.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/chara_statique01.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Level/LevelPlayerScript.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 8.0
+radius = 32.1403
 
-[node name="RoomPlayer" type="KinematicBody2D"]
+[node name="LevelPlayer" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
