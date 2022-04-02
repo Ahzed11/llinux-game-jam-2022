@@ -55,6 +55,13 @@ func spawn_food_and_water(var rng):
 	if get_parent().get_parent().food_items_count > 0 :
 		table_food.add_child(preload("res://Scenes/objet/food.tscn").instance())
 
+func no_more_water_or_food(var what):
+	if what == "food":
+		pass
+	if what == "water":
+		pass
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sol = [$sol1,$sol2,$sol3,$sol4,$sol5,$sol6,$sol7,$sol8]

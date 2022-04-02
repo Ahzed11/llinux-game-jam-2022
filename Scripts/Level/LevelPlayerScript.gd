@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 				emit_signal("chose", "stairs")
 			if body_on[0].name == "door":
 				emit_signal("chose", "door")
+			if body_on[1].name == "water":
+				emit_signal("chose", "door")
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(player_input.normalized() * move_speed)
