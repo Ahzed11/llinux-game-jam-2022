@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/RoomPlayer/RoomPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/chara_statique01.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/RoomPlayer/RoomPlayerSprite.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Prefabs/RoomPlayerWeapon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 14.0
@@ -11,6 +12,12 @@ radius = 14.0
 [node name="RoomPlayer" type="KinematicBody2D"]
 collision_mask = 29
 script = ExtResource( 1 )
+
+[node name="Light" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+texture_scale = 3.1
+mode = 3
+shadow_enabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
