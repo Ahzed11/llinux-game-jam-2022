@@ -1,16 +1,13 @@
 extends KinematicBody2D
 
+export var move_speed := 400
+var player_input: Vector2
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func _ready() -> void:
+	player_input = Vector2(0, 0)
 
+func _process(delta: float) -> void:
+	player_input.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-func _process(delta):
-	if(Input.action_press("left")):
-		
+func _physics_process(delta: float) -> void:
+	move_and_slide(player_input.normalized() * move_speed)
