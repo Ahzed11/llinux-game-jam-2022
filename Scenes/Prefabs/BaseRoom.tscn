@@ -27,3 +27,9 @@ position = Vector2( 383, 302 )
 rotation = -1.57079
 
 [node name="ItemPositions" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="ItemPositions"]
+position = Vector2( 64, 88 )
+
+[node name="Position2D2" type="Position2D" parent="ItemPositions"]
+position = Vector2( 385, 112 )
