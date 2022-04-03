@@ -11,6 +11,7 @@ var player_input: Vector2
 var body_on
 var to_right := true
 var number_of_action_left : int
+var end_menu = preload("res://Scenes/Prefabs/Menus/EndMenu.tscn")
 onready var game_manager = get_tree().get_root().get_node("GameManager")
 
 func change_water(is_end:bool) -> void:
@@ -19,17 +20,17 @@ func change_water(is_end:bool) -> void:
 	var node = get_parent().get_node("WaterEffect")
 	
 	if get_parent().get_parent().hungriness < 1:
-		 get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
+		 go_to_end_menu()
 	if get_parent().get_parent().thirst < 1:
-		 get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
+		 go_to_end_menu()
 	
 	if is_end :
 		get_parent().get_parent().total_action_left = number_of_action_left
 	else :
-		if number_of_action_left > 0: 
+		if number_of_action_left >= 1: 
 			node.offset = Vector2(0,number_of_action_left-3*1.5)
-		elif number_of_action_left == 0:
-			get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
+		elif number_of_action_left <= 0:
+			go_to_end_menu()
 
 func _ready() -> void:
 	consumption_multiplayer = get_parent().get_parent().consumption_multiplayer
@@ -101,3 +102,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(player_input.normalized() * move_speed)
+
+func go_to_end_menu() -> void:
+	var end_menu_instance = end_menu.instance()
+	get_tree().get_root().add_child(end_menu_instance)
+	end_menu_instance.set_score(game_manager.score)
+	get_tree().get_root().remove_child(game_manager)

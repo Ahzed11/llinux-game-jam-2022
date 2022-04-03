@@ -51,13 +51,14 @@ func create_timer():
 	add_child(timer)
 	
 func reset_player_pos() -> void:
-	if initial_player_pos != null:
+	if initial_player_pos != null and player != null:
 		player.position = initial_player_pos
 	
 
 func start_timer() -> void:
-	time_label.visible = true
-	timer.start()
+	if time_label != null:
+		time_label.visible = true
+		timer.start()
 		
 func get_random_room_path() -> String:
 	var dir := Directory.new()

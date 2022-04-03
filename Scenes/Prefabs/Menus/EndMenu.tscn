@@ -26,7 +26,6 @@ margin_top = 113.0
 margin_right = 104.0
 margin_bottom = 135.0
 custom_fonts/font = ExtResource( 2 )
-text = "You lose !"
 align = 1
 valign = 1
 
