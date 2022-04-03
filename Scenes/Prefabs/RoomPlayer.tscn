@@ -16,7 +16,7 @@ move_speed = 200
 
 [node name="Light" type="Light2D" parent="."]
 texture = ExtResource( 5 )
-texture_scale = 50.0
+texture_scale = 31.42
 color = Color( 0.980392, 0.937255, 0.878431, 1 )
 energy = 0.5
 shadow_enabled = true
