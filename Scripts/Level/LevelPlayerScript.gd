@@ -79,7 +79,7 @@ func _process(delta: float) -> void:
 					
 				if(body_on[1].name == "food"):
 					emit_signal("chose", "food")
-					get_parent().get_parent().increase_food_by(100)
+					get_parent().get_parent().increase_hungriness_by(100)
 					change_water(false)
 					get_parent().get_node("SpawnManager").no_more_water_or_food("food")
 
