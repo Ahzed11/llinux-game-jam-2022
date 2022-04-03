@@ -43,7 +43,11 @@ func _on_chose(choice: String) -> void:
 			remove_child(room)
 			add_child(level)
 	
-
+		"water":
+			water_items_count -= 1;
+			if water_items_count == 0:
+				emit_signal("no_more","water")
+			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
