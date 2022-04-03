@@ -50,6 +50,15 @@ func _on_chose(choice: String) -> void:
 				emit_signal("no_more","water")
 		"food": 
 			food_items_count -= 1
+			
+func _on_loot(loot: String) -> void:
+	match loot:
+		"food":
+			food_items_count += 1
+		"water":
+			water_items_count += 1
+		"wood":
+			wood_items_count += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
