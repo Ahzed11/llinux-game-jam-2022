@@ -38,7 +38,7 @@ func _ready() -> void:
 	change_water(false)
 
 func _process(delta: float) -> void:
-	var consumption = 5*(1.25*consumption_multiplayer)
+	var consumption = max(5*(1.25*consumption_multiplayer),5)
 	
 	if Input.is_action_just_pressed("right") and not to_right:
 		to_right = true
