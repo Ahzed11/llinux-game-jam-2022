@@ -5,8 +5,9 @@ signal chose
 onready var time_label := $CanvasLayer/Label as Label
 var player
 var initial_player_pos: Vector2
-
 var timer: Timer
+var screen_effect = preload("res://Scenes/Prefabs/ScreenEffect.tscn")
+
 const ROOM_FOLDER := "res://Scenes/Prefabs/Rooms/"
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,8 @@ func _ready() -> void:
 	add_child(room_instance)
 	player = room_instance.get_node("RoomPlayer")
 	initial_player_pos = player.position
+	var screen_effect_instance = screen_effect.instance()
+	add_child(screen_effect_instance)
 	
 	create_timer()
 	
