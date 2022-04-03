@@ -10,6 +10,7 @@ var number_of_action_left : int
 
 func change_water(is_end:bool) -> void:
 	number_of_action_left -= 1
+	
 	var node = get_parent().get_node("WaterEffect")
 	if is_end :
 		get_parent().get_parent().total_action_left = number_of_action_left
