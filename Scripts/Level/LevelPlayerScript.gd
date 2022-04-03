@@ -46,8 +46,12 @@ func _process(delta: float) -> void:
 		if len(body_on) > 0 :
 			if body_on[0].name == "stairs":
 				change_water(true)
+				get_parent().get_parent().decrease_hungriness_by(20)
+				get_parent().get_parent().decrease_thirst_by(25)
 				emit_signal("chose", "stairs")
 			if body_on[0].name == "door":
+				get_parent().get_parent().decrease_hungriness_by(10)
+				get_parent().get_parent().decrease_thirst_by(12.5)
 				change_water(false)
 				emit_signal("chose", "door")
 				
@@ -55,21 +59,27 @@ func _process(delta: float) -> void:
 				if body_on[0].get_node("Sprite2").visible == false and get_parent().get_parent().wood_items_count > 0:
 					change_water(false)
 					get_parent().get_parent().dec_wood()
+					get_parent().get_parent().decrease_hungriness_by(10)
+					get_parent().get_parent().decrease_thirst_by(12.5)
 					body_on[0].get_node("Sprite2").visible = true
 					body_on[0].get_node("Sprite3").visible = true
 					
 				elif body_on[0].get_node("Sprite2").visible == true:
+					get_parent().get_parent().decrease_hungriness_by(20)
+					get_parent().get_parent().decrease_thirst_by(25)
 					change_water(true)
 					emit_signal("chose", "stairs")
 				
 			if len(body_on) > 1:
 				if(body_on[1].name == "water"):
 					emit_signal("chose", "water")
+					get_parent().get_parent().increase_thirst_by(100)
 					change_water(false)
 					get_parent().get_node("SpawnManager").no_more_water_or_food("water")
 					
 				if(body_on[1].name == "food"):
 					emit_signal("chose", "food")
+					get_parent().get_parent().increase_food_by(100)
 					change_water(false)
 					get_parent().get_node("SpawnManager").no_more_water_or_food("food")
 

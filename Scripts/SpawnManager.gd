@@ -89,7 +89,7 @@ func _ready():
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	spawn_door(rng)
-	if rng.randi_range(1,10) < 6:
+	if rng.randi_range(1,10) < 8:
 		spawn_stair(rng)
 	else: 
 		spawn_broken_stair(rng)
