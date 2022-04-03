@@ -45,7 +45,8 @@ func _on_chose(choice: String) -> void:
 	
 		"water":
 			water_items_count -= 1;
-			level.Spawn
+			if water_items_count == 0:
+				emit_signal("no_more","water")
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
