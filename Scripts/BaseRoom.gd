@@ -8,10 +8,19 @@ var initial_player_pos: Vector2
 var timer: Timer
 var screen_effect = preload("res://Scenes/Prefabs/ScreenEffect.tscn")
 
+var lootables = Array()
+var food = preload("res://Scenes/Prefabs/Lootables/Food.tscn")
+var water = preload("res://Scenes/Prefabs/Lootables/Water.tscn")
+var wood = preload("res://Scenes/Prefabs/Lootables/Wood.tscn")
+
 const ROOM_FOLDER := "res://Scenes/Prefabs/Rooms/"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	lootables.append(food)
+	lootables.append(water)
+	lootables.append(wood)
+	
 	var room_path = get_random_room_path()
 	var room = load(ROOM_FOLDER + room_path)
 	var room_instance = room.instance()
@@ -20,6 +29,13 @@ func _ready() -> void:
 	initial_player_pos = player.position
 	var screen_effect_instance = screen_effect.instance()
 	add_child(screen_effect_instance)
+	
+	var spawn_positions = room_instance.get_node("ItemPositions").get_children()
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	for e in spawn_positions:
+		if rng.randi_range(0, 100) > 30:
+			e.add_child(lootables[rng.randi_range(0, len(lootables) - 1)].instance())
 	
 	create_timer()
 	
