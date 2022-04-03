@@ -6,9 +6,23 @@ export var move_speed := 100
 var player_input: Vector2
 var body_on
 var to_right := true
+var number_of_action_left : int
+
+func change_water(is_end:bool) -> void:
+	number_of_action_left -= 1
+	var node = get_parent().get_node("WaterEffect")
+	if is_end :
+		get_parent().get_parent().total_action_left = number_of_action_left
+	else :
+		if number_of_action_left > 0: 
+			node.offset = Vector2(0,number_of_action_left-3*1.5)
+		elif number_of_action_left == 0:
+			get_tree().quit()
 
 func _ready() -> void:
 	player_input = Vector2(0, 0)
+	number_of_action_left = 3 + get_parent().get_parent().total_action_left
+	change_water(false)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("right") and not to_right:
@@ -30,15 +44,32 @@ func _process(delta: float) -> void:
 		body_on = $Area2D.get_overlapping_areas()
 		if len(body_on) > 0 :
 			if body_on[0].name == "stairs":
+				change_water(true)
 				emit_signal("chose", "stairs")
 			if body_on[0].name == "door":
+				change_water(false)
 				emit_signal("chose", "door")
+				
+			if body_on[0].name == "lader":
+				if body_on[0].get_node("Sprite2").visible == false and get_parent().get_parent().wood_items_count > 0:
+					change_water(false)
+					get_parent().get_parent().wood_items_count -= 1
+					body_on[0].get_node("Sprite2").visible = true
+					body_on[0].get_node("Sprite3").visible = true
+					
+				elif body_on[0].get_node("Sprite2").visible == true:
+					change_water(true)
+					emit_signal("chose", "stairs")
+				
 			if len(body_on) > 1:
 				if(body_on[1].name == "water"):
 					emit_signal("chose", "water")
+					change_water(false)
 					get_parent().get_node("SpawnManager").no_more_water_or_food("water")
+					
 				if(body_on[1].name == "food"):
 					emit_signal("chose", "food")
+					change_water(false)
 					get_parent().get_node("SpawnManager").no_more_water_or_food("food")
 
 func _physics_process(delta: float) -> void:

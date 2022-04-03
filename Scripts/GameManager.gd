@@ -17,6 +17,7 @@ var hungriness := 100
 var wood_items_count := 1
 var food_items_count := 5
 var water_items_count := 5
+var total_action_left := 0
 
 var level
 var room
