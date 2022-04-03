@@ -18,6 +18,22 @@ func spawn_stair(var rng):
 	while sol[pose_number].get_child_count() != 0 :
 		pose_number = rng.randi_range(0,7)
 	sol[pose_number].add_child(node)
+	
+func spawn_broken_stair(var rng):
+	var pose_number:int
+	
+	var node = preload("res://Scenes/objet/broken_stairs.tscn").instance()
+	pose_number = rng.randi_range(0,7)
+	while sol[pose_number].get_child_count() != 0 :
+		pose_number = rng.randi_range(0,7)
+	sol[pose_number].add_child(node)
+	
+	node = preload("res://Scenes/objet/lader.tscn").instance()
+	pose_number = rng.randi_range(0,7)
+	while sol[pose_number].get_child_count() != 0 :
+		pose_number = rng.randi_range(0,7)
+	sol[pose_number].add_child(node)
+	
 
 func spawn_windows(var rng):
 	var pose_number:int
@@ -73,6 +89,10 @@ func _ready():
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	spawn_door(rng)
-	spawn_stair(rng)
+	if rng.randi_range(1,4) < 4:
+		spawn_stair(rng)
+	else: 
+		spawn_broken_stair(rng)
+	
 	spawn_windows(rng)
 	spawn_food_and_water(rng)

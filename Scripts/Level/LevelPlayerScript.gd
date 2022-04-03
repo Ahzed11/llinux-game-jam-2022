@@ -12,7 +12,7 @@ func change_water(is_end:bool) -> void:
 	number_of_action_left -= 1
 	var node = get_parent().get_node("WaterEffect")
 	if is_end :
-		get_parent().get_parent().total_action_left += number_of_action_left
+		get_parent().get_parent().total_action_left = number_of_action_left
 	else :
 		if number_of_action_left > 0: 
 			node.offset = Vector2(0,number_of_action_left-3*1.5)
@@ -49,6 +49,17 @@ func _process(delta: float) -> void:
 			if body_on[0].name == "door":
 				change_water(false)
 				emit_signal("chose", "door")
+				
+			if body_on[0].name == "lader":
+				if body_on[0].get_node("Sprite2").visible == false and get_parent().get_parent().wood_items_count > 0:
+					change_water(false)
+					get_parent().get_parent().wood_items_count -= 1
+					body_on[0].get_node("Sprite2").visible = true
+					body_on[0].get_node("Sprite3").visible = true
+					
+				elif body_on[0].get_node("Sprite2").visible == true:
+					change_water(true)
+					emit_signal("chose", "stairs")
 				
 			if len(body_on) > 1:
 				if(body_on[1].name == "water"):
