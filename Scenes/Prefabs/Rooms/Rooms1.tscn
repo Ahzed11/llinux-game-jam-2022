@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/tilesets/room.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Prefabs/RoomPlayer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sounds/Ambiant/cave themeb4.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/Prefabs/RoomEnnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sounds/Ambiant/cave themeb4.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -50,5 +50,6 @@ position = Vector2( 200, 123 )
 position = Vector2( 377, 109 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
+autoplay = true
 bus = "Ambient"

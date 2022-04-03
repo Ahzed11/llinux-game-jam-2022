@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ove_Melaa_-_Rainy_NOT_loopable_Long_Version.ogg-c59ded3e36a93b24fd4e7cf891120533.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Ambiant/Ove_Melaa_-_Rainy_NOT_loopable_Long_Version.ogg"
+dest_files=[ "res://.import/Ove_Melaa_-_Rainy_NOT_loopable_Long_Version.ogg-c59ded3e36a93b24fd4e7cf891120533.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
