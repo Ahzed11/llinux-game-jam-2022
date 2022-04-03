@@ -128,6 +128,6 @@ position = Vector2( 40, 120 )
 
 [node name="WaterEffect" type="Sprite" parent="."]
 material = SubResource( 5 )
-position = Vector2( 245, 233 )
-scale = Vector2( 15.0938, 6.21875 )
+position = Vector2( 241.75, 288.75 )
+scale = Vector2( 15.2969, 9.70312 )
 texture = ExtResource( 7 )
