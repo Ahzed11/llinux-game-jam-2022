@@ -47,5 +47,66 @@ margin_bottom = 62.0
 custom_fonts/font = ExtResource( 2 )
 text = "Quit"
 
+[node name="Options" type="VBoxContainer" parent="."]
+visible = false
+anchor_bottom = 1.0
+margin_right = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Master" type="VBoxContainer" parent="Options"]
+margin_right = 120.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="Options/Master"]
+margin_right = 120.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 2 )
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="Options/Master"]
+margin_top = 16.0
+margin_right = 120.0
+margin_bottom = 32.0
+min_value = -100.0
+
+[node name="Music" type="VBoxContainer" parent="Options"]
+margin_top = 36.0
+margin_right = 120.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="Options/Music"]
+margin_right = 120.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 2 )
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Options/Music"]
+margin_top = 16.0
+margin_right = 120.0
+margin_bottom = 32.0
+min_value = -100.0
+
+[node name="SFX" type="VBoxContainer" parent="Options"]
+margin_top = 72.0
+margin_right = 120.0
+margin_bottom = 104.0
+
+[node name="Label" type="Label" parent="Options/SFX"]
+margin_right = 120.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 2 )
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="Options/SFX"]
+margin_top = 16.0
+margin_right = 120.0
+margin_bottom = 32.0
+min_value = -100.0
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="value_changed" from="Options/Master/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
+[connection signal="value_changed" from="Options/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Options/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
