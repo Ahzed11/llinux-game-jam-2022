@@ -19,7 +19,7 @@ shader_param/alpha = 1.0
 [node name="Wood" type="Area2D"]
 collision_layer = 32
 script = ExtResource( 2 )
-item = "water"
+item = "wood"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 1.5, -2 )

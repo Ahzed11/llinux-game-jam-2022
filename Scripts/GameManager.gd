@@ -63,8 +63,7 @@ func _on_chose(choice: String) -> void:
 	
 		"water":
 			dec_water()
-			if water_items_count < 1 :
-				emit_signal("no_more","water")
+
 		"food": 
 			dec_food()
 			
@@ -94,7 +93,11 @@ func create_room_instance() -> void:
 	
 func free_all_children() -> void:
 	for child in get_children():
-		child.queue_free()
+		print(child.name)
+		if(child.name == "CanvasLayer"):
+			pass
+		else:
+			child.queue_free()
 	
 func update_food_label() -> void:
 	food_label.text = str(food_items_count)
