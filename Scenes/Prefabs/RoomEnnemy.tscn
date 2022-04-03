@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/bad_guy.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/RoomEnnemy/RoomEnnemy.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/HPLabel.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -27,19 +26,6 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -1 )
 shape = SubResource( 1 )
 
-[node name="HPLabel" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -32.0
-margin_top = -48.0
-margin_right = 8.0
-margin_bottom = -34.0
-rect_scale = Vector2( 1.6, 1 )
-text = "Tarte"
-script = ExtResource( 3 )
-
 [node name="Light" type="Light2D" parent="."]
 texture = ExtResource( 4 )
 texture_scale = 5.0
@@ -47,5 +33,4 @@ color = Color( 0.980392, 0.937255, 0.878431, 1 )
 energy = 0.5
 shadow_enabled = true
 
-[connection signal="health_changed" from="." to="HPLabel" method="_on_Ennemy_health_changed"]
 [connection signal="is_dead" from="." to="." method="_on_Ennemy_is_dead"]
