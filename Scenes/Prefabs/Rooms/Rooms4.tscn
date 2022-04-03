@@ -3,6 +3,7 @@
 [ext_resource path="res://Sprites/tilesets/room.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Prefabs/RoomPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Materials/LightMaterial.tres" type="Material" id=3]
+[ext_resource path="res://Scenes/Prefabs/RoomEnnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sounds/Ambiant/Iwan Gabovitch - Dark Ambience Loop.ogg" type="AudioStream" id=4]
 
 [node name="BaseRoom" type="Node2D"]
@@ -36,3 +37,7 @@ position = Vector2( 97, 95 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Ennemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 142, 204 )
+rotation = 4.80664

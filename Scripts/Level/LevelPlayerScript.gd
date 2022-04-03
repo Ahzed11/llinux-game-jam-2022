@@ -15,13 +15,19 @@ func change_water(is_end:bool) -> void:
 	number_of_action_left -= 1
 	
 	var node = get_parent().get_node("WaterEffect")
+	
+	if get_parent().get_parent().hungriness < 1:
+		 get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
+	if get_parent().get_parent().thirst < 1:
+		 get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
+	
 	if is_end :
 		get_parent().get_parent().total_action_left = number_of_action_left
 	else :
 		if number_of_action_left > 0: 
 			node.offset = Vector2(0,number_of_action_left-3*1.5)
 		elif number_of_action_left == 0:
-			get_tree().quit()
+			get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
 
 func _ready() -> void:
 	player_input = Vector2(0, 0)
