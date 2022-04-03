@@ -90,7 +90,7 @@ size_flags_vertical = 3
 
 [node name="WaterBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer2"]
 margin_right = 238.0
-margin_bottom = 24.0
+margin_bottom = 12.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 custom_styles/bg = SubResource( 1 )
@@ -99,7 +99,7 @@ step = 1.0
 [node name="FoodBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer2"]
 margin_left = 242.0
 margin_right = 480.0
-margin_bottom = 24.0
+margin_bottom = 12.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 custom_styles/bg = SubResource( 2 )
