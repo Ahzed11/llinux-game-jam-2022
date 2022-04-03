@@ -39,12 +39,18 @@ func spawn_windows(var rng):
 	var pose_number:int
 	var node
 	var number_windows = rng.randi_range(0,5)
+	var random_nbr
 	
 	for x in range(number_windows):
-		if rng.randi_range(0,200) < 190 :
+		random_nbr = rng.randi_range(0,200)
+		if random_nbr < 150 :
 			node = preload("res://Scenes/objet/window.tscn").instance()
-		else:
+		if 150 <= random_nbr and random_nbr < 175 :
 			node = preload("res://Scenes/objet/window2.tscn").instance() 
+		if 175 <= random_nbr and random_nbr < 195 :
+			node = preload("res://Scenes/objet/window_window.tscn").instance()
+		if 195 <= random_nbr and random_nbr <= 200 :
+			node = preload("res://Scenes/objet/window_green.tscn").instance()
 		pose_number = rng.randi_range(0,6)
 		while wall[pose_number].get_child_count() != 0 :
 			pose_number = rng.randi_range(0,6)
