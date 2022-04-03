@@ -11,5 +11,5 @@ dest_files=[ "res://.import/cave themeb4.ogg-5b8993a5085031ce170fe42de2368a8d.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

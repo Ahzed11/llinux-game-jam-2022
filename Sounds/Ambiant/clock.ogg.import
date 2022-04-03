@@ -11,5 +11,5 @@ dest_files=[ "res://.import/clock.ogg-cd3e88198db7f1b32b68448d8c6a8650.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

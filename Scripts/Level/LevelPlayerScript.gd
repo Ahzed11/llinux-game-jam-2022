@@ -3,6 +3,9 @@ extends KinematicBody2D
 signal chose
 
 export var move_speed := 100
+onready var eat_stream = $EatStream
+onready var drink_stream = $DrinkStream
+
 var player_input: Vector2
 var body_on
 var to_right := true
@@ -72,12 +75,14 @@ func _process(delta: float) -> void:
 				
 			if len(body_on) > 1:
 				if(body_on[1].name == "water"):
+					drink_stream.play()
 					emit_signal("chose", "water")
 					get_parent().get_parent().increase_thirst_by(100)
 					change_water(false)
 					get_parent().get_node("SpawnManager").no_more_water_or_food("water")
 					
 				if(body_on[1].name == "food"):
+					eat_stream.play()
 					emit_signal("chose", "food")
 					get_parent().get_parent().increase_hungriness_by(100)
 					change_water(false)

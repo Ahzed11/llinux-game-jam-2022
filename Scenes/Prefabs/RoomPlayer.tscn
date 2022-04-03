@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/RoomPlayer/RoomPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/chara_statique01.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/RoomPlayer/RoomPlayerSprite.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Prefabs/RoomPlayerWeapon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/FX/Footsteps/Footstep_Dirt_00.ogg" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 14.0
@@ -35,3 +36,9 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="FootstepStreams" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="FootstepStreams"]
+stream = ExtResource( 8 )
+bus = "FX"

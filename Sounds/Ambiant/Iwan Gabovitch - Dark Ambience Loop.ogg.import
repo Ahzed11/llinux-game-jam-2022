@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Iwan Gabovitch - Dark Ambience Loop.ogg-1f3abe3bcd6c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

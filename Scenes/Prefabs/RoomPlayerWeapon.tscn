@@ -58,50 +58,66 @@ anims/Swing = SubResource( 3 )
 
 [node name="HitPlayer" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 10 )
+bus = "FX"
 
 [node name="HitPlayer2" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 8 )
+bus = "FX"
 
 [node name="HitPlayer3" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 6 )
+bus = "FX"
 
 [node name="HitPlayer4" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 4 )
+bus = "FX"
 
 [node name="HitPlayer5" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 9 )
+bus = "FX"
 
 [node name="HitPlayer6" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 7 )
+bus = "FX"
 
 [node name="HitPlayer7" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 5 )
+bus = "FX"
 
 [node name="HitPlayer8" type="AudioStreamPlayer2D" parent="HitPlayers"]
 stream = ExtResource( 3 )
+bus = "FX"
 
 [node name="SwooshPlayers" type="Node2D" parent="."]
 
 [node name="SwooshPlayer" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 12 )
+bus = "FX"
 
 [node name="SwooshPlayer2" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 11 )
+bus = "FX"
 
 [node name="SwooshPlayer3" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 17 )
+bus = "FX"
 
 [node name="SwooshPlayer4" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 13 )
+bus = "FX"
 
 [node name="SwooshPlayer5" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 13 )
+bus = "FX"
 
 [node name="SwooshPlayer6" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 14 )
+bus = "FX"
 
 [node name="SwooshPlayer7" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 15 )
+bus = "FX"
 
 [node name="SwooshPlayer8" type="AudioStreamPlayer2D" parent="SwooshPlayers"]
 stream = ExtResource( 16 )
+bus = "FX"

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/horror ambient.ogg-6afadc61d5aa382380b065e053403d1b.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -93,9 +93,8 @@ func create_room_instance() -> void:
 	
 func free_all_children() -> void:
 	for child in get_children():
-		print(child.name)
-		if(child.name == "CanvasLayer"):
-			pass
+		if child.name == "CanvasLayer":
+			continue
 		else:
 			child.queue_free()
 	
