@@ -35,7 +35,13 @@ func _ready() -> void:
 	rng.randomize()
 	for e in spawn_positions:
 		if rng.randi_range(0, 100) > 30:
-			e.add_child(lootables[rng.randi_range(0, len(lootables) - 1)].instance())
+			var random = rng.randi_range(0, 100)
+			if random < 50 :
+				e.add_child(lootables[1].instance())
+			if 50 <= random and random < 80 :
+				e.add_child(lootables[0].instance())
+			if 80 <= random : 
+				e.add_child(lootables[2].instance())
 	
 	create_timer()
 	

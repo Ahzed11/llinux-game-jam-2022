@@ -19,9 +19,7 @@ func change_water(is_end:bool) -> void:
 	
 	var node = get_parent().get_node("WaterEffect")
 	
-	if get_parent().get_parent().hungriness < 1:
-		 go_to_end_menu()
-	if get_parent().get_parent().thirst < 1:
+	if get_parent().get_parent().hungriness < 1 or get_parent().get_parent().thirst < 1:
 		 go_to_end_menu()
 	
 	if is_end :
