@@ -55,16 +55,19 @@ func spawn_food_and_water(var rng):
 	if get_parent().get_parent().food_items_count > 0 :
 		table_food.add_child(preload("res://Scenes/objet/food.tscn").instance())
 
-func no_more_water_or_food(var what):
-	if what == "food":
-		pass
-	if what == "water":
-		for node in sol :
-			print(node.get_child_count()) 
+func no_more_water_or_food(what: String) -> void:
+
+	for node in sol :
+		if node.get_child_count() != 0 :
+			if(node.get_children()[0].get_child_count() > 2):
+				if(node.get_children()[0].get_children()[2].name == what):
+					var obj = node.get_children()[0].get_children()[2]
+					node.get_children()[0].remove_child(obj)
+					print(node.get_children()[0].get_children())
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_parent().get_parent().connect("no_more",self,"no_more_water_or_food")
+	get_tree().get_root().connect("no_more",self,"no_more_water_or_food")
 	sol = [$sol1,$sol2,$sol3,$sol4,$sol5,$sol6,$sol7,$sol8]
 	wall = [$wall,$wall2,$wall3,$wall4,$wall5,$wall6,$wall7]
 	var rng := RandomNumberGenerator.new()

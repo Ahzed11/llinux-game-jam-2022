@@ -123,9 +123,8 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 
 
 [node name="SpawnManager" parent="." instance=ExtResource( 3 )]
 
-[node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 45, 115 )
-scale = Vector2( 0.4, 0.4 )
+[node name="levelplayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40, 120 )
 
 [node name="WaterEffect" type="Sprite" parent="."]
 material = SubResource( 5 )
