@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Prefabs/Menus/EndMenu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=2]
 
 [node name="Control" type="CanvasLayer"]
@@ -12,7 +12,19 @@ anchor_right = 0.5
 margin_left = -102.0
 margin_top = 88.0
 margin_right = 102.0
-margin_bottom = 102.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 2 )
+text = "You lose !"
+align = 1
+valign = 1
+
+[node name="LabelScore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 113.0
+margin_right = 104.0
+margin_bottom = 135.0
 custom_fonts/font = ExtResource( 2 )
 text = "You lose !"
 align = 1
@@ -35,9 +47,9 @@ text = "Play Again"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 visible = false
-margin_top = 24.0
+margin_top = 22.0
 margin_right = 144.0
-margin_bottom = 44.0
+margin_bottom = 42.0
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]

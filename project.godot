@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Llinux-game-jam- 2022"
-run/main_scene="res://Scenes/GameManager.tscn"
+run/main_scene="res://Scenes/Prefabs/Menus/ManiMenu.tscn"
 config/icon="res://Sprites/icon.png"
 
 [debug]
