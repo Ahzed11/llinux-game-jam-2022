@@ -20,9 +20,11 @@ func _process(delta: float) -> void:
 				emit_signal("chose", "door")
 			if len(body_on) > 1:
 				if(body_on[1].name == "water"):
-					pass
+					emit_signal("chose", "water")
+					get_parent().get_node("SpawnManager").no_more_water_or_food("water")
 				if(body_on[1].name == "food"):
-					pass
+					emit_signal("chose", "food")
+					get_parent().get_node("SpawnManager").no_more_water_or_food("food")
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(player_input.normalized() * move_speed)
