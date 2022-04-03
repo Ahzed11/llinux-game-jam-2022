@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 			if body_on[0].name == "lader":
 				if body_on[0].get_node("Sprite2").visible == false and get_parent().get_parent().wood_items_count > 0:
 					change_water(false)
-					get_parent().get_parent().wood_items_count -= 1
+					get_parent().get_parent().dec_wood()
 					body_on[0].get_node("Sprite2").visible = true
 					body_on[0].get_node("Sprite3").visible = true
 					
