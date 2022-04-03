@@ -18,6 +18,7 @@ var wood_items_count := 1
 var food_items_count := 5
 var water_items_count := 5
 var total_action_left := 0
+var consumption_multiplayer := 0
 
 var level
 var room
@@ -33,6 +34,12 @@ func _ready() -> void:
 	update_wood_label()
 	update_water_bar()
 	update_food_bar()
+
+func _multiplier_inc(choice: String) -> void:
+
+	match choice:
+		"add":
+			consumption_multiplayer += 1
 
 func _on_chose(choice: String) -> void:
 	match choice:
