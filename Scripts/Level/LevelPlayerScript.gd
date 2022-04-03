@@ -11,10 +11,10 @@ func _ready() -> void:
 	player_input = Vector2(0, 0)
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("right") and not to_right:
+	if Input.is_action_just_pressed("right") and not to_right:
 		to_right = true
 		$Sprite.flip_h = false
-	elif Input.is_action_pressed("left") and to_right:
+	elif Input.is_action_just_pressed("left") and to_right:
 		to_right = false
 		$Sprite.flip_h = true
 
