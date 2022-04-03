@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/tilesets/room.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Prefabs/RoomPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Prefabs/RoomEnnemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -31,6 +32,10 @@ tile_data = PoolIntArray( 65538, -1073741821, 0, 65547, -1073741821, 0, 65551, 1
 [node name="RoomPlayer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 383, 302 )
 rotation = -1.57079
+
+[node name="Ennemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 333, 74 )
+rotation = 0.98262
 
 [node name="ItemPositions" type="Node2D" parent="."]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/tilesets/room.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Prefabs/RoomPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Materials/LightMaterial.tres" type="Material" id=3]
+[ext_resource path="res://Scenes/Prefabs/RoomEnnemy.tscn" type="PackedScene" id=4]
 
 [node name="BaseRoom" type="Node2D"]
 
@@ -38,3 +39,7 @@ position = Vector2( 161, 221 )
 
 [node name="Position2D3" type="Position2D" parent="ItemPositions"]
 position = Vector2( 85, 216 )
+
+[node name="Ennemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 171, 45 )
+rotation = 0.98262

@@ -1,6 +1,6 @@
 extends Area2D
 
-export var damage := 10
+export var damage := 50
 export var sounds := Array()
 
 onready var animation_player := $AnimationPlayer as AnimationPlayer
