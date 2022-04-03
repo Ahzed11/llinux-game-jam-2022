@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/LevelPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tiles/walls.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Prefabs/SpawnManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/tilesets/room.tres" type="TileSet" id=4]
+[ext_resource path="res://Sprites/white.png" type="Texture" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "walls.png 0"
@@ -20,6 +21,90 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+
+uniform float reflectionBlur = 0; // works only if project's driver is set to GLES3, more information here https://docs.godotengine.org/ru/stable/tutorials/shading/screen-reading_shaders.html
+uniform float calculatedOffset = 0; // this is controlled by script, it takes into account camera position and water object position, that way reflection stays in the same place when camera is moving
+uniform sampler2D noiseTexture;
+
+uniform vec2 distortionScale = vec2(0.3, 0.3);
+uniform vec2 distortionSpeed = vec2(0.01, 0.02);
+uniform vec2 distortionStrength = vec2(0.3, 0.3);
+
+uniform float waveSmoothing = .01;
+
+uniform float mainWaveSpeed = 2.5;
+uniform float mainWaveFrequency = 20;
+uniform float mainWaveAmplitude = 0.005;
+
+uniform vec4 shorelineColor : hint_color = vec4(1.);
+uniform float shorelineSize : hint_range(0., 1.) = 0.0025;
+uniform float foamSize : hint_range(0., 1.0) = 0.0025;
+uniform float foamStrength : hint_range(0., 1.0) = 0.5;
+uniform float foamSpeed;
+uniform vec2 foamScale;
+
+void fragment()
+{
+	
+	vec2 uv = SCREEN_UV; 
+	
+	vec4 color = textureLod(SCREEN_TEXTURE, uv, reflectionBlur);
+
+	float distFromTop = mainWaveAmplitude * sin(UV.x * mainWaveFrequency + TIME * mainWaveSpeed) + mainWaveAmplitude;
+	
+	float waveArea = UV.y - distFromTop;
+	waveArea = smoothstep(0., 1. * waveSmoothing, waveArea);
+	
+	color.a *= waveArea;
+
+	float shorelineBottom = UV.y - distFromTop - shorelineSize;
+	shorelineBottom = smoothstep(0., 1. * waveSmoothing,  shorelineBottom);
+	
+	float shoreline = waveArea - shorelineBottom;
+	color.rgb += shoreline * shorelineColor.rgb;
+	
+	vec4 foamNoise = texture(noiseTexture, UV* foamScale + TIME * foamSpeed);
+	foamNoise.r = smoothstep(0.0, foamNoise.r, foamStrength); 
+	
+	float shorelineFoam = UV.y - distFromTop;
+	shorelineFoam = smoothstep(0.0, shorelineFoam, foamSize);
+	
+	shorelineFoam *= foamNoise.r;
+	color.rgb += shorelineFoam * shorelineColor.rgb;
+	
+	COLOR = color;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=6]
+period = 141.3
+persistence = 0.656
+lacunarity = 1.78
+
+[sub_resource type="NoiseTexture" id=7]
+noise = SubResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/reflectionBlur = 0.0
+shader_param/calculatedOffset = 0.1
+shader_param/distortionScale = Vector2( 0.3, 0.3 )
+shader_param/distortionSpeed = Vector2( 0, 0 )
+shader_param/distortionStrength = Vector2( 0.3, 0.3 )
+shader_param/waveSmoothing = 0.01
+shader_param/mainWaveSpeed = 2.5
+shader_param/mainWaveFrequency = 20.0
+shader_param/mainWaveAmplitude = 0.005
+shader_param/shorelineColor = Color( 0.396078, 0.52549, 0.639216, 1 )
+shader_param/shorelineSize = 0.035
+shader_param/foamSize = 0.384
+shader_param/foamStrength = 0.323
+shader_param/foamSpeed = null
+shader_param/foamScale = null
+shader_param/noiseTexture = SubResource( 7 )
 
 [node name="LevelScene" type="Node2D"]
 position = Vector2( 0, 2 )
@@ -41,3 +126,9 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 
 [node name="RoomPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 45, 115 )
 scale = Vector2( 0.4, 0.4 )
+
+[node name="WaterEffect" type="Sprite" parent="."]
+material = SubResource( 5 )
+position = Vector2( 245, 233 )
+scale = Vector2( 15.0938, 6.21875 )
+texture = ExtResource( 7 )

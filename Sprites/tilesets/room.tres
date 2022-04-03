@@ -45,10 +45,10 @@ vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=24]
-polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+polygon = PoolVector2Array( 3.03517, 0.0062542, 3.03517, 32, 22.9936, 32, 23.0477, 26.9961, 19.0993, 26.942, 19.0452, 4.87416, 23.0477, 4.92825, 23.1018, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=25]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+points = PoolVector2Array( 22.9936, 0, 23.0477, 4.92825, 18.937, 4.98234, 18.937, 26.942, 22.8854, 26.9961, 22.9395, 31.9722, 2.98109, 32, 3.03517, 0 )
 
 [sub_resource type="NavigationPolygon" id=20]
 vertices = PoolVector2Array( 23.1559, 23.9672, 11.8515, 23.9672, 11.8515, 7.09176, 23.1559, 7.09176 )
