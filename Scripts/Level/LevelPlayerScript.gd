@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal chose
+var consumption_multiplayer
 
 export var move_speed := 100
 onready var eat_stream = $EatStream
@@ -10,6 +11,7 @@ var player_input: Vector2
 var body_on
 var to_right := true
 var number_of_action_left : int
+onready var game_manager = get_tree().get_root().get_node("GameManager")
 
 func change_water(is_end:bool) -> void:
 	number_of_action_left -= 1
@@ -30,11 +32,14 @@ func change_water(is_end:bool) -> void:
 			get_tree().change_scene("res://Scenes/Prefabs/Menus/EndMenu.tscn")
 
 func _ready() -> void:
+	consumption_multiplayer = get_parent().get_parent().consumption_multiplayer
 	player_input = Vector2(0, 0)
 	number_of_action_left = 3 + get_parent().get_parent().total_action_left
 	change_water(false)
 
 func _process(delta: float) -> void:
+	var consumption = max(10*(1.25*consumption_multiplayer),10)
+	
 	if Input.is_action_just_pressed("right") and not to_right:
 		to_right = true
 		$Sprite.flip_h = false
@@ -55,12 +60,12 @@ func _process(delta: float) -> void:
 		if len(body_on) > 0 :
 			if body_on[0].name == "stairs":
 				change_water(true)
-				get_parent().get_parent().decrease_hungriness_by(20)
-				get_parent().get_parent().decrease_thirst_by(25)
+				get_parent().get_parent().decrease_hungriness_by(consumption)
+				get_parent().get_parent().decrease_thirst_by(consumption)
 				emit_signal("chose", "stairs")
 			if body_on[0].name == "door":
-				get_parent().get_parent().decrease_hungriness_by(10)
-				get_parent().get_parent().decrease_thirst_by(12.5)
+				get_parent().get_parent().decrease_hungriness_by(consumption)
+				get_parent().get_parent().decrease_thirst_by(consumption)
 				change_water(false)
 				emit_signal("chose", "door")
 				
@@ -68,14 +73,14 @@ func _process(delta: float) -> void:
 				if body_on[0].get_node("Sprite2").visible == false and get_parent().get_parent().wood_items_count > 0:
 					change_water(false)
 					get_parent().get_parent().dec_wood()
-					get_parent().get_parent().decrease_hungriness_by(10)
-					get_parent().get_parent().decrease_thirst_by(12.5)
+					get_parent().get_parent().decrease_hungriness_by(consumption)
+					get_parent().get_parent().decrease_thirst_by(consumption)
 					body_on[0].get_node("Sprite2").visible = true
 					body_on[0].get_node("Sprite3").visible = true
 					
 				elif body_on[0].get_node("Sprite2").visible == true:
-					get_parent().get_parent().decrease_hungriness_by(20)
-					get_parent().get_parent().decrease_thirst_by(25)
+					get_parent().get_parent().decrease_hungriness_by(consumption)
+					get_parent().get_parent().decrease_thirst_by(consumption)
 					change_water(true)
 					emit_signal("chose", "stairs")
 				

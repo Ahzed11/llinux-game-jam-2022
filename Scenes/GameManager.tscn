@@ -104,3 +104,20 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 custom_styles/bg = SubResource( 2 )
 step = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+margin_top = 273.0
+margin_right = 480.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+margin_right = 480.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Current Floor: 1"
+align = 1
+valign = 1

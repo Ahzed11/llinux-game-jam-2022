@@ -11,6 +11,7 @@ onready var water_label = $CanvasLayer/VBoxContainer/HBoxContainer2/WaterLabel a
 onready var wood_label = $CanvasLayer/VBoxContainer/HBoxContainer3/WoodLabel as Label
 onready var water_bar = $CanvasLayer/HBoxContainer2/WaterBar as ProgressBar
 onready var food_bar = $CanvasLayer/HBoxContainer2/FoodBar as ProgressBar
+onready var score_level = $CanvasLayer/HBoxContainer/ScoreLabel as Label
 
 var thirst := 100
 var hungriness := 100
@@ -18,6 +19,8 @@ var wood_items_count := 1
 var food_items_count := 5
 var water_items_count := 5
 var total_action_left := 0
+var consumption_multiplayer := 0
+var score := 1
 
 var level
 var room
@@ -33,6 +36,12 @@ func _ready() -> void:
 	update_wood_label()
 	update_water_bar()
 	update_food_bar()
+
+func _multiplier_inc(choice: String) -> void:
+
+	match choice:
+		"add":
+			consumption_multiplayer += 1
 
 func _on_chose(choice: String) -> void:
 	match choice:
@@ -53,6 +62,8 @@ func _on_chose(choice: String) -> void:
 			room = null
 			free_all_children()
 			create_level_instance()
+			score += 1
+			score_level.text = "Current Floor: " + str(score)
 			
 		"exit":
 			for child in canvas_layer.get_children():
